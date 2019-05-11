@@ -68,7 +68,7 @@ class kalman:
         self.P[3,3] += 0.1
         self.P[4,4] += 0.1
         self.P[5,5] += 0.1
-        self.x = self.F * self.x + self.u
+        self.x = self.F * self.x 
         self.P = self.F * self.P * np.transpose(self.F)
         return
         
@@ -80,7 +80,7 @@ class kalman:
         
         self.x = self.x + (K * y)
         self.P = (self.I - (K * self.H)) * self.P
-        return [self.x[0], self.x[1]]
+        return [self.x[0], self.x[1], self.x[2]]
         
 if __name__ == "__main__":
     main()
